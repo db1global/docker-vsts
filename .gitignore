@@ -1,0 +1,5 @@
+/.idea
+/agent/vsts/*
+/server/tmp/*
+/.env
+/agent/artifacts/*

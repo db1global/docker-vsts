@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+    agent:
+        build: ./agent
+        container_name: agent
+        volumes:
+            - ./agent/vsts:/var/vsts
+            - ./scripts:/var/scripts
+            - ./agent/artifacts:/var/artifact
+        environment:
+            - VSTS_ACCOUNT=${VSTS_ACCOUNT}
+            - VSTS_TOKEN=${VSTS_TOKEN}
+            - VSTS_WORK=/var/vsts
+            - VSTS_AGENT=${VSTS_AGENT}
+            - VSTS_POOL=${VSTS_POOL}
+        networks:
+            - build
+
+networks:
+    build:
