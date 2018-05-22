@@ -7,7 +7,6 @@ services:
         volumes:
             - ./agent/vsts:/var/vsts
             - ./scripts:/var/scripts
-            - ./agent/artifacts:/var/artifact
         environment:
             - VSTS_ACCOUNT=${VSTS_ACCOUNT}
             - VSTS_TOKEN=${VSTS_TOKEN}
